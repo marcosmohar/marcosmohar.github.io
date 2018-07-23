@@ -1,0 +1,519 @@
+@import url("https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+@import url("animation.css");
+
+:root {
+  /* Base font size */
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+.main-content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex: 1 1 80%;
+  flex: 1 1 80%;
+  min-height: 100%;
+}
+
+.menu {
+  border: 7px double black;
+  margin: 0 4% 5%;
+  padding: 2%;
+  box-shadow: 1px 1px 25px -5px black;
+}
+
+.logo {
+  position: relative;
+  width: 100%;
+  max-width: 15rem;
+  height: auto;
+  padding: 0.5em 0.5em 0.5em 1em;
+  margin: 0 auto;
+}
+
+/****************************
+    MASONRY GRID PORTFOLIO
+****************************/
+
+.portfolio {
+  -ms-flex: 1;
+  flex: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.portfolio-item {
+  -ms-flex-align: center;
+  align-items: center;
+  background: #f96855;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: #c4c4c4;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 1.5em;
+  font-weight: 700;
+  -ms-flex-pack: center;
+  justify-content: center;
+  transition: all ease-in-out 300ms;
+  position: relative;
+  z-index: 10;
+}
+
+.portfolio-item:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  color: white;
+  text-decoration: none;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.85);
+}
+
+.navbar-nav {
+  padding: 1rem;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six {
+  overflow: hidden;
+  min-height: 150px;
+  margin: 0.5rem 0;
+}
+
+.one {
+  background-image: url("https://source.unsplash.com/960x614/?restaurant,tasteful");
+}
+
+.two {
+  background-image: url("https://source.unsplash.com/614x514/?restaurant,tasteful");
+}
+
+.three {
+  background-image: url("https://source.unsplash.com/614x320/?restaurant,tasteful");
+}
+
+.four {
+  background-image: url("https://source.unsplash.com/860x614/?restaurant,tasteful");
+}
+
+.five {
+  background-image: url("https://source.unsplash.com/860x574/?restaurant,tasteful");
+}
+
+.six {
+  background-image: url("https://source.unsplash.com/700x414/?restaurant,tasteful");
+}
+
+.one::before,
+.two::before,
+.three::before,
+.four::before,
+.five::before,
+.six::before {
+  content: "";
+  display: block;
+  background: #353535;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+
+.one:hover::before,
+.two:hover::before,
+.three:hover::before,
+.four:hover::before,
+.five:hover::before,
+.six:hover::before {
+  opacity: 0.2;
+}
+
+.button {
+  margin: 4em auto 0;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1023px) {
+  .one,
+  .two,
+  .three,
+  .four,
+  .five,
+  .six {
+    margin: 0;
+  }
+  .portfolio {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: (minmax(250px, 1fr));
+    grid-template-rows: repeat(3, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .one,
+  .two,
+  .three,
+  .four,
+  .five,
+  .six {
+    margin: 0;
+  }
+  .main-content {
+    margin: 0 5%;
+    height: calc(100vh-150px);
+  }
+  .portfolio {
+    display: -ms-grid;
+    display: grid;
+    height: 100%;
+    -ms-grid-rows: (minmax(100px, 1fr));
+    grid-template-rows: repeat(6, minmax(100px, 1fr));
+    -ms-grid-columns: (minmax(100px, 1fr));
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    grid-gap: 20px;
+  }
+  .portfolio-item.small {
+    -ms-grid-row: span 1;
+    grid-row: span 1;
+    -ms-grid-column: span 1;
+    grid-column: span 1;
+  }
+  .portfolio-item.medium {
+    -ms-grid-row: span 2;
+    grid-row: span 2;
+    -ms-grid-column: span 2;
+    grid-column: span 2;
+  }
+  .portfolio-item.large {
+    -ms-grid-row: span 3;
+    grid-row: span 3;
+    -ms-grid-column: span 3;
+    grid-column: span 3;
+  }
+  .portfolio-item.tall {
+    -ms-grid-row: span 3;
+    grid-row: span 3;
+    -ms-grid-column: span 2;
+    grid-column: span 2;
+  }
+  .portfolio-item.wide {
+    -ms-grid-row: span 2;
+    grid-row: span 2;
+    -ms-grid-column: span 3;
+    grid-column: span 3;
+  }
+}
+
+/******************************
+          CONCEPTO
+******************************/
+
+.historia {
+  padding: 4rem 0;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* CONCEPTO */
+
+.historia .heading--title {
+  font-size: 6em;
+  font-family: "Herr Von Muellerhoff", cursive;
+  text-shadow: 1px 1px 3px #000;
+}
+.semblanza {
+  display: block;
+  padding: 2em auto;
+}
+.semblanza p {
+  line-height: 1.5;
+  font-size: 1.2em;
+  margin: 1.5rem auto;
+}
+
+.texto {
+  margin: 0 auto;
+  line-height: 1.5;
+  font-size: 1em;
+  padding: 0 5%;
+}
+/******************************
+          GALERIA
+******************************/
+
+.gallery-container {
+  max-width: 100rem;
+  margin: 0 auto 3rem;
+  padding: 5rem 2rem;
+}
+
+.heading {
+  font-family: "Herr Von Muellerhoff", cursive;
+  font-size: 6rem;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  padding: 2.5rem 0 3.5rem;
+  color: #c59d5f;
+  text-shadow: 1px 1px 1px black;
+}
+
+.gallery {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  /* Compensate for excess margin on outer gallery flex items */
+  margin: -1rem -1rem;
+}
+
+.gallery-item {
+  /* Minimum width of 24rem and grow to fit available space */
+  -ms-flex: 1 0 24rem;
+  flex: 1 0 24rem;
+  /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+  margin: 1rem;
+  box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+  transform: scale(1.15);
+}
+
+@supports ((display: -ms-grid) or (display: grid)) {
+  .gallery {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(24rem, 1fr)) [auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-gap: 2rem;
+  }
+  .gallery,
+  .gallery-item {
+    margin: 0;
+  }
+}
+
+/*****************************
+        RESERVACION
+******************************/
+
+.heading--title {
+  font-size: 6rem;
+  color: #c59d5f;
+}
+
+.heading--subtitle {
+  text-transform: uppercase;
+  color: #181818;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  margin-top: -0.8em;
+  z-index: 1;
+  letter-spacing: 10px;
+}
+
+.info--img {
+  display: grid;
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  align-items: center;
+}
+.info--img img {
+  width: 100%;
+  height: auto;
+}
+
+.info--datos {
+  margin: 1em 0;
+  padding: 1em 0;
+  border-bottom: 5px solid black;
+  border-top: 5px solid black;
+  border-width: 100%;
+  display: grid;
+  justify-content: center;
+}
+.info--restaurante {
+  text-align: left;
+  font-size: 1.2em;
+  padding: 1em 0 2em;
+}
+.info--restaurante h2 {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+.info--restaurante h4 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: 1.2em;
+  margin-bottom: 1em;
+}
+.info--restaurante dt {
+  font-weight: 600;
+  color: #333;
+}
+
+.info--restaurante dd {
+  margin-bottom: 0.8em;
+}
+.info-reservacion {
+  justify-self: center;
+}
+
+@media screen and (min-width: 720px) {
+  .info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 40px;
+    justify-items: center;
+  }
+  .info--datos {
+    max-width: 960px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    color: #333333;
+    padding: 1.5em 5px;
+  }
+  .info--restaurante {
+    padding-right: 1em;
+  }
+  .info--restaurante h4 {
+    margin-bottom: 2em;
+  }
+}
+
+/********************************
+            SABORES
+********************************/
+
+h3 {
+  position: relative;
+  font-family: serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+h3:after {
+  content: "";
+  width: 100px;
+  background-color: #c59d5f;
+  width: 100px;
+  height: 3px;
+  display: block;
+  margin-top: 5px;
+}
+.sabores {
+  -webkit-padding-start: 0;
+}
+.sabor {
+  background-color: #fefefe;
+  border-radius: 5px;
+  border: 7px double black;
+  max-width: 320px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr 400px;
+  grid-gap: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.crd-details {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 100px 300px 1fr;
+  align-items: center;
+  margin: 0 auto;
+}
+@media screen and (min-width: 760px) {
+  .sabor {
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    grid-gap: 20px;
+  }
+  .crd-details {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .sabores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+  }
+  .sabor:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .sabor:nth-child(2) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+  }
+  .sabor:nth-child(3) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+  }
+  .sabor:nth-child(4) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 4;
+  }
+}

@@ -1,0 +1,711 @@
+@import url("https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("animation.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #242424;
+  font-size: 100%;
+  overflow-x: hidden;
+}
+
+/*   GLOBAL  */
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+button {
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.center {
+  line-height: 0;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
+.center h1 {
+  font-family: "Herr Von Muellerhoff", cursive;
+  color: #be8040;
+  font-size: 80px;
+  margin-bottom: 34px;
+}
+
+.center h2 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 28px;
+}
+
+.center #asterisk {
+  color: #be8040;
+  line-height: 0.5;
+  font-size: 30px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.center #asterisk:before,
+.center #asterisk:after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  height: 1px;
+  width: 0%;
+  opacity: 0;
+  background: white;
+}
+
+.center #asterisk:before {
+  margin-right: 10px;
+}
+
+.center #asterisk:after {
+  margin-left: 10px;
+}
+
+.center p {
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.heading--title {
+  font-family: "Herr Von Muellerhoff", cursive;
+}
+
+.shadow {
+  text-shadow: 1px 1px 5px black;
+}
+
+.shadow-box {
+  box-shadow: 1px 1px 10px -2px black;
+}
+
+/*  HEADER */
+
+.header {
+  background: #181818;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  height: 80px;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.header .logo {
+  position: relative;
+  width: 100%;
+  max-width: 15rem;
+  height: auto;
+  padding: 0.5em 0.5em 0.5em 1em;
+  margin: 0 auto;
+}
+
+.header .logo img {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 1000px) {
+  .header .logo {
+    width: 100%;
+    -ms-grid-column-span: 1;
+    -ms-grid-column: 2;
+    grid-column: 2 / span 1;
+    max-width: 20rem;
+  }
+}
+
+.header .nav-toggle {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .header {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 20px;
+    -ms-grid-columns: 1fr minmax(auto, 3fr) minmax(600px, 1fr) 1fr;
+    grid-template-columns: 1fr minmax(auto, 3fr) minmax(600px, 1fr) 1fr;
+  }
+}
+
+/* NAVIGATION */
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 0.1s ease-out;
+}
+
+nav .nav-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Oswald", sans-serif;
+  background: #181818;
+}
+
+nav .nav-menu li {
+  padding: 0.5em 0;
+  padding-left: 1em;
+}
+
+nav .nav-menu li:hover {
+  background: rgba(76, 76, 76, 0.85);
+}
+
+nav .nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+@media screen and (min-width: 1000px) {
+  nav {
+    all: unset;
+    grid-column: 3 / 4;
+    text-align: right;
+  }
+  nav .nav-menu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex: 1;
+    flex: 1;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  nav .nav-menu li {
+    margin-left: 15px;
+  }
+  nav .nav-menu li:hover {
+    color: lightbrown;
+    background: none;
+  }
+  nav .nav-menu li a {
+    position: relative;
+    opacity: 1;
+    line-height: 1.2em;
+    letter-spacing: 0;
+  }
+  nav .nav-menu li a::before,
+  nav .nav-menu li a::after {
+    content: "";
+    display: block;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    transform: scale(0, 1);
+  }
+  nav .nav-menu li a::before {
+    top: -0.75em;
+    left: 0;
+    right: 0;
+  }
+  nav .nav-menu li a::after {
+    bottom: -0.75em;
+    left: 0;
+    right: 0;
+  }
+  nav .nav-menu li a:hover::before,
+  nav .nav-menu li a:hover::after {
+    transform: scale(1, 1);
+    transition: transform 200ms ease-in-out;
+  }
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+@media screen and (min-width: 1000px) {
+  .nav-toggle-label {
+    display: none;
+  }
+}
+
+/* HERO JUMBOTRON */
+
+.hero {
+  -ms-flex-line-pack: center;
+  align-content: center;
+  background: 50% 50% / cover;
+  background-attachment: scroll;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 95vh;
+  position: relative;
+  transform-style: inherit;
+  width: 100vw;
+  background: 50% 50% / cover;
+}
+
+.hero::before {
+  background-image: url("https://source.unsplash.com/1600x900/?restaurant,food");
+  background-size: cover;
+  bottom: 0;
+  content: "";
+  display: block;
+  filter: brightness(50%);
+  left: 0;
+  max-height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center center 0;
+  transform: translateZ(-1px) scale(2);
+  z-index: -1;
+}
+
+.hero .hero--title {
+  color: #be8040;
+  font-family: "Herr Von Muellerhoff", cursive;
+  font-size: 4rem;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+}
+
+@media screen and (min-width: 1000px) {
+  .hero .hero--title {
+    font-size: 6rem;
+  }
+}
+
+.hero .hero--subtitle {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  font-weight: normal;
+  letter-spacing: 0.3rem;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+  word-spacing: 0.6rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .hero .hero--subtitle {
+    font-size: 2rem;
+  }
+}
+
+/*  SECTIONS   */
+
+section {
+  height: 100%;
+  overflow: hidden;
+}
+
+.section--title {
+  font-family: "Herr Von Muellerhoff", cursive;
+  line-height: 0.5;
+  font-size: 5rem;
+  font-weight: normal;
+  margin: 0;
+  color: #be8040;
+}
+
+.section--title .custom-font {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  color: #fefefe;
+}
+
+/*  CLASSES  */
+
+.flake {
+  color: #be8040;
+}
+
+.add-padding {
+  padding: 5rem 0;
+}
+
+.center-text {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 30px;
+  color: #4d4d4d;
+}
+
+.center-text.section--title {
+  color: #be8040;
+}
+
+.center-text h2 {
+  margin-top: 25px;
+  line-height: 0;
+}
+
+.center-text p {
+  margin-top: 0;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+}
+
+.center-text a {
+  font-family: "Montserrat", sans-serif;
+  color: #be8040;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-bottom: solid 2px #be8040;
+}
+
+.add-flex {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 760px) {
+  .add-flex {
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.add-flex .stuffed-cherries {
+  background: url("https://source.unsplash.com/1450x614/?restaurant,snack")
+    no-repeat center center;
+  background-size: cover;
+  height: 315px;
+  width: 320px;
+}
+
+.center-h1 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.custom-h1 {
+  text-align: center;
+  color: white;
+  letter-spacing: 5px;
+  margin-bottom: 0;
+}
+
+.custom-h1 span {
+  letter-spacing: 0;
+}
+
+/*
+  TASTEFUL RECIPES SECTION
+*/
+
+.bread-background {
+  background: black
+    url("https://source.unsplash.com/1450x614/?restaurant,bread") no-repeat
+    center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+/*
+MENU SECTION
+*/
+
+.menu {
+  padding: 30px;
+}
+
+.menu-images {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.menu-images img {
+  width: 100%;
+}
+
+@media screen and (min-width: 900px) {
+  .menu {
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+/*
+THE PERFECT BLEND SECTION
+*/
+
+.cake-background {
+  background: black url("https://source.unsplash.com/1450x614/?restaurant,cake")
+    no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+/*
+  CULINARY DELIGHT SECTION
+*/
+
+.reservation-section {
+  background: #fafafa;
+  margin-bottom: 0;
+  padding: 3rem 0;
+}
+
+.reservation-section .section--title .custom-font {
+  color: #333;
+}
+
+.reservation-section div:first-child {
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.reservation-section div:last-child {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.reservation-section div:last-child img {
+  margin: auto;
+  width: 85%;
+}
+
+/*
+  FOOTER
+*/
+
+footer {
+  color: #fafafa;
+  text-align: center;
+  background: #181818;
+  padding-top: 4em;
+  margin: 0 auto;
+}
+
+footer .footer--heading {
+  text-transform: uppercase;
+  padding: 1em;
+}
+
+footer .flake {
+  margin: 1rem;
+  color: #c59d5f;
+}
+
+footer .footer--info {
+  margin: 2em 0;
+  padding: 1em 3em;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+footer .footer--info .sucursal {
+  margin: 1em 0 2em;
+}
+
+footer .footer--info .sucursal p {
+  line-height: 1.5;
+}
+
+footer .footer--info .sucursal .nombre {
+  font-family: "Herr Von Muellerhoff", cursive;
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: #c59d5f;
+  margin-bottom: 0.5em;
+}
+
+footer .footer--info .bb,
+footer .footer--info .gb,
+footer .footer--info .db {
+  -ms-flex: 1;
+  flex: 1;
+}
+
+footer .footer--info .bb {
+  grid-column: 1;
+  -ms-grid-column: 1;
+  grid-column-start: 1;
+}
+
+footer .footer--info .gb {
+  -ms-grid-column: 2;
+  grid-column-start: 2;
+}
+
+footer .footer--info .db {
+  -ms-grid-column: 3;
+  grid-column-start: 3;
+}
+
+footer .footer--copy {
+  background-color: #000;
+  height: 100%;
+  color: #888;
+  font-size: 0.8em;
+  line-height: 2em;
+  margin-top: 2em;
+}
+
+@media screen and (min-width: 760px) {
+  footer .sucursal {
+    margin: 1em;
+  }
+  footer .footer--info {
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  header,
+  .bread-background,
+  .cake-background {
+    background-attachment: scroll;
+  }
+}
+
+@media (min-width: 769px) {
+  /*
+    NAV
+  */
+  .add-flex {
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .add-flex div:first-child {
+    -ms-flex: 1;
+    flex: 1;
+    padding: 0 50px;
+  }
+  .add-flex div:last-child {
+    min-width: 400px;
+    margin: 50px;
+  }
+  .menu-images {
+    -ms-flex: 1;
+    flex: 1;
+  }
+  .menu div:last-child {
+    -ms-flex: 1;
+    flex: 1;
+  }
+}

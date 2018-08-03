@@ -223,7 +223,7 @@ h1 {
 
 .inicio {
   background: purple;
-  background-image: url("https://source.unsplash.com/1600x900/?restaurant");
+  background-image: url("/img/gb-bg.jpg");
   background-size: cover;
 }
 
@@ -240,7 +240,93 @@ h1 {
 }
 
 .restaurantes {
-  background: #fab055;
+  background-image: url("https://source.unsplash.com/1600x900/?sailing");
+}
+
+.restaurantes .navega {
+  text-shadow: 1px 1px 3px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.restaurantes .navega h2 {
+  display: block;
+  font-size: 3rem;
+}
+
+.restaurantes .navega .bb-restaurantes {
+  -webkit-box-shadow: 0 0 25px -5px black;
+          box-shadow: 0 0 25px -5px black;
+  background: teal;
+  width: 20rem;
+  padding: 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+}
+
+.restaurantes .navega .bb-restaurantes li {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  position: relative;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.restaurantes .navega .bb-restaurantes li:hover {
+  background: #006486;
+  -webkit-transition: background 0.2s ease-out;
+  transition: background 0.2s ease-out;
+}
+
+.restaurantes .navega .bb-restaurantes li:hover a {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+
+.restaurantes .navega .bb-restaurantes li a {
+  text-decoration: none;
+  color: white;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 
 .sabores {
@@ -299,7 +385,7 @@ h1 {
   color: #323b4c;
   border-bottom: 4px double #323b4c;
   border-width: 80%;
-  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #e6b741;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #c59d5f;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -336,7 +422,7 @@ h1 {
 
 .container {
   position: relative;
-  background: rgba(203, 203, 203, 0.5);
+  /*background: rgba(203, 203, 203, 0.5);*/
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 40px;

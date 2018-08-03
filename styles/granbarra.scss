@@ -159,7 +159,7 @@ h1 {
 }
 .inicio {
   background: purple;
-  background-image: url("https://source.unsplash.com/1600x900/?restaurant");
+  background-image: url("/img/gb-bg.jpg");
   background-size: cover;
 }
 .concepto {
@@ -172,7 +172,52 @@ h1 {
   background: #3f003f;
 }
 .restaurantes {
-  background: #fab055;
+  background-image: url("https://source.unsplash.com/1600x900/?sailing");
+  .navega {
+    text-shadow: 1px 1px 3px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      display: block;
+      font-size: 3rem;
+    }
+    .bb-restaurantes {
+      box-shadow: 0 0 25px -5px black;
+      background: teal;
+      width: 20rem;
+      padding: 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      list-style-type: none;
+      li {
+        width: 100%;
+        flex: 1;
+        display: grid;
+        place-items: center;
+        position: relative;
+        transform: scale(1);
+        transition: all 0.2s ease-in;
+        &:hover {
+          background: #006486;
+          transition: background 0.2s ease-out;
+          a {
+            transform: scale(1.4);
+            transition: transform 0.2s ease-out;
+          }
+        }
+        a {
+          text-decoration: none;
+          color: white;
+          transition: transform 0.2s ease-out;
+        }
+      }
+    }
+  }
 }
 .sabores {
   background: #f59f00;
@@ -217,7 +262,7 @@ h1 {
           color: #323b4c;
           border-bottom: 4px double #323b4c;
           border-width: 80%;
-          text-shadow: 1px 1px 0 #fff, 2px 2px 0 #e6b741;
+          text-shadow: 1px 1px 0 #fff, 2px 2px 0 #c59d5f;
           text-transform: uppercase;
           letter-spacing: 2px;
         }
@@ -252,7 +297,7 @@ h1 {
 
 .container {
   position: relative;
-  background: rgba(203, 203, 203, 0.5);
+  /*background: rgba(203, 203, 203, 0.5);*/
   box-sizing: border-box;
   margin: 40px;
   padding: 2rem;

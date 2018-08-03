@@ -158,9 +158,14 @@ h1 {
   opacity: 1;
 }
 .inicio {
-  background: purple;
   background-image: url("/img/gb-bg.jpg");
   background-size: cover;
+  background: #181818;
+  .container {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
 }
 .concepto {
   background: #bb48bb;
@@ -173,6 +178,7 @@ h1 {
 }
 .restaurantes {
   background-image: url("https://source.unsplash.com/1600x900/?sailing");
+  background-size: cover;
   .navega {
     text-shadow: 1px 1px 3px black;
     display: flex;
@@ -198,7 +204,8 @@ h1 {
         width: 100%;
         flex: 1;
         display: grid;
-        place-items: center;
+        align-items: center;
+        justify-items: center;
         position: relative;
         transform: scale(1);
         transition: all 0.2s ease-in;
@@ -231,6 +238,10 @@ h1 {
 .menu {
   background: #495057;
   .container {
+    padding: 1rem;
+    @media (min-width: 420px) {
+      padding: 2rem;
+    }
     .menu-display {
       box-shadow: 0 0 25px 0 #181818;
       background: whitesmoke;

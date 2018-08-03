@@ -16,9 +16,13 @@
 body {
   min-height: 100vh;
   background-color: #fafafa;
+  background-image: url("./../img/dark-wood.jpg");
+  background-size: cover;
+  font-family: "Montserrat", sans-serif;
 }
 
 .main-content {
+  background-color: #fafafa;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -40,10 +44,32 @@ body {
   width: 100%;
   max-width: 15rem;
   height: auto;
-  padding: 0.5em 0.5em 0.5em 1em;
+  /*padding: 0.5em 0.5em 0.5em 1em;*/
   margin: 0 auto;
+  font-size: 3rem;
+  font-family: "Herr Von Muellerhoff", cursive;
+  color: #c59d5f;
 }
 
+footer {
+  position: relative;
+}
+.footer-logo {
+  width: 150px;
+}
+.copy {
+  background: #181818;
+  height: 2rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+}
+.copy small {
+  margin-bottom: 0 !important;
+}
 /****************************
     MASONRY GRID PORTFOLIO
 ****************************/
@@ -134,7 +160,7 @@ body {
   content: "";
   display: block;
   background: #353535;
-  opacity: 0.8;
+  opacity: 0.6;
   position: absolute;
   top: 0;
   right: 0;
@@ -157,7 +183,7 @@ body {
   margin: 4em auto 0;
 }
 
-a {
+.portfolio a {
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -192,7 +218,7 @@ a {
     margin: 0;
   }
   .main-content {
-    margin: 0 5%;
+    margin: 5%;
     height: calc(100vh-150px);
   }
   .portfolio {
@@ -247,6 +273,7 @@ a {
   justify-items: center;
   align-items: center;
   text-align: center;
+  margin-bottom: 0;
 }
 
 /* CONCEPTO */
@@ -280,6 +307,7 @@ a {
   max-width: 100rem;
   margin: 0 auto 3rem;
   padding: 5rem 2rem;
+  background: whitesmoke;
 }
 
 .heading {
@@ -433,12 +461,24 @@ a {
 /********************************
             SABORES
 ********************************/
-
-h3 {
-  position: relative;
-  font-family: serif;
-  font-size: 25px;
-  font-weight: 500;
+.base {
+  padding: 2rem;
+  margin: 1rem;
+  border: 7px double black;
+}
+.base section {
+  margin: 5rem 0;
+}
+.base section:first-child {
+  margin-top: 1rem;
+}
+.base h1 {
+  text-align: center;
+  padding: 2rem;
+  font-family: "Herr Von Muellerhoff", cursive;
+  font-size: 6rem;
+  color: #c59d5f;
+  text-shadow: 1px 1px 2px #000;
 }
 
 h3:after {
@@ -450,70 +490,83 @@ h3:after {
   display: block;
   margin-top: 5px;
 }
-.sabores {
-  -webkit-padding-start: 0;
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.sabor {
-  background-color: #fefefe;
-  border-radius: 5px;
-  border: 7px double black;
-  max-width: 320px;
-  margin: 2rem auto;
+.cards .cards_item {
+  display: flex;
+  margin-top: 0;
+  padding: 0 1em 2em;
+}
+.no-flexbox .cards .cards_item {
+  float: left;
+}
+.cards .cards_item .card {
+  background-color: #fff;
+  border: 0 solid #eee;
+  border-radius: 3px;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  grid-template-columns: 1fr 400px;
-  grid-gap: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
-.crd-details {
-  width: 90%;
+.cards .cards_item .card:hover .card_image {
+  -webkit-filter: contrast(100%);
+  filter: contrast(100%);
+}
+.cards .cards_item .card .card_image {
+  -webkit-filter: contrast(70%);
+  filter: contrast(70%);
+  transition: -webkit-filter 0.5s ease-out;
+  transition: filter 0.5s ease-out;
+  transition: filter 0.5s ease-out, -webkit-filter 0.5s ease-out;
+}
+.cards .cards_item .card .card_image img {
+  width: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.cards .cards_item .card .card_content {
   display: flex;
+  flex: 1 0 auto;
   flex-direction: column;
-  grid-template-columns: 100px 300px 1fr;
-  align-items: center;
-  margin: 0 auto;
+  margin: 0;
+  padding: 1.5em;
 }
-@media screen and (min-width: 760px) {
-  .sabor {
-    max-width: 700px;
-    display: grid;
-    grid-template-columns: 1fr 400px;
-    grid-gap: 20px;
+.cards .cards_item .card .card_content p {
+  flex: 1 0 auto;
+}
+footer h5 {
+  color: #c59d5f;
+}
+footer a {
+  font-size: 0.8rem;
+}
+@media screen and (min-width: 42em) and (max-width: 60em) {
+  .cards .cards_item {
+    width: 50%;
   }
-  .crd-details {
-    display: grid;
-    grid-template-rows: 100px 1fr;
-    grid-template-columns: 1fr;
-    margin: 0;
+  .no-flexbox .cards .cards_item:nth-child(2n + 1) {
+    clear: both;
   }
 }
-@media screen and (min-width: 1000px) {
-  .sabores {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    align-items: center;
-    justify-items: center;
+@media screen and (min-width: 60em) {
+  .cards .cards_item {
+    width: 33.3333%;
   }
-  .sabor:nth-child(1) {
-    grid-column-start: 1;
-    grid-column-end: 3;
+  .no-flexbox .cards .cards_item:nth-child(3n + 1) {
+    clear: both;
   }
-
-  .sabor:nth-child(2) {
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 2;
+}
+@media screen and (min-width: 72em) {
+  .cards .cards_item {
+    width: 25%;
   }
-  .sabor:nth-child(3) {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 3;
-  }
-  .sabor:nth-child(4) {
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 4;
+  .no-flexbox .cards .cards_item:nth-child(3n + 1) {
+    clear: both;
   }
 }

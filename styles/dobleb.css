@@ -15,9 +15,7 @@
 
 body {
   min-height: 100vh;
-  background-color: #fafafa;
-  background-image: url("./../img/dark-wood.jpg");
-  background-size: cover;
+  background-color: #dbdbdb;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -409,7 +407,7 @@ footer {
 }
 .info--restaurante {
   text-align: left;
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 1em 0 2em;
 }
 .info--restaurante h2 {

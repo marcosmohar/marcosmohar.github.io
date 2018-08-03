@@ -10,6 +10,12 @@ body {
   -webkit-perspective: 1000px;
           perspective: 1000px;
   text-transform: uppercase;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .site-wrap {
@@ -221,6 +227,23 @@ h1 {
   opacity: 1;
 }
 
+/********************
+  Estilos paneles
+*********************/
+.container {
+  position: relative;
+  /*background: rgba(203, 203, 203, 0.5);*/
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 40px;
+  padding: 2rem;
+  height: 90%;
+}
+
+.container p {
+  text-transform: none;
+}
+
 .inicio {
   background-image: url("/img/gb-bg.jpg");
   background-size: cover;
@@ -236,12 +259,240 @@ h1 {
   justify-items: center;
 }
 
+.inicio .container .logo-display {
+  max-width: 50vmax;
+}
+
+.inicio .container .logo-display img {
+  width: 100%;
+  height: auto;
+}
+
 .concepto {
-  background: #bb48bb;
+  background: gainsboro;
+}
+
+.concepto .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0;
+}
+
+.concepto .container .concepto-img {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.concepto .container .concepto-texto {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0;
+  background: whitesmoke;
+  color: #181818;
+}
+
+.concepto .container .concepto-texto h2 {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  border-bottom: 3px solid #c59d5f;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #c59d5f;
+}
+
+.concepto .container .concepto-texto p {
+  font-family: "Montserrat", sans-serif;
+  text-transform: none;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (min-width: 960px) {
+  .concepto .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2fr;
+        grid-template-columns: 1fr 2fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  .concepto .container .concepto-img {
+    height: 100%;
+    overflow: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .concepto .container .concepto-texto {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    margin: 0;
+    max-width: 100%;
+  }
 }
 
 .nosotros {
   background: #680168;
+}
+
+.nosotros .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 10% 1fr;
+      grid-template-rows: 10% 1fr;
+  padding: 1rem;
+  place-items: center;
+}
+
+.nosotros .container .team {
+  text-align: center;
+  overflow: auto;
+}
+
+.nosotros .container .team .card-user {
+  position: relative;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  display: inline-block;
+  cursor: pointer;
+  width: 250px;
+  height: 160px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  overflow: hidden;
+  color: #181818;
+}
+
+.nosotros .container .team .card-user .header {
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  height: 80px;
+  background-color: #2c3e50;
+}
+
+.nosotros .container .team .card-user .header h4 {
+  width: 100%;
+}
+
+.nosotros .container .team .card-user .avatar {
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ecf0f1;
+  border: 5px solid #ecf0f1;
+  display: inline-block;
+  margin-top: -55px;
+  overflow: hidden;
+}
+
+.nosotros .container .team .card-user .avatar img {
+  width: 100%;
+}
+
+.nosotros .container .team .card-user .text {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 0.5rem 1rem;
+  width: 250px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.nosotros .container .team .card-user .text h3 {
+  margin: 7px 0;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  text-align: center;
+}
+
+.nosotros .container .team .card-user .text p {
+  font-family: "Montserrat", sans-serif;
+  text-transform: none;
+  line-height: 1.2em;
+  text-align: center;
+  margin: 20px 0 30px 0;
+  padding-bottom: 1rem;
+}
+
+.nosotros .container .team .card-user .social {
+  padding: 5% 0;
+  background-color: #2c3e50;
+  color: #fff;
+}
+
+.nosotros .container .team .card-user .social i {
+  padding: 0 5%;
+  font-size: 1.2em;
+}
+
+.nosotros .container .team .card-user .social i:hover {
+  -webkit-transition: all 0.6s ease-out;
+  transition: all 0.6s ease-out;
+}
+
+.nosotros .container .team .card-user:hover {
+  height: 415px;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.nosotros .container .team .card-user:hover .header {
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.nosotros .container .team .card-user:hover .text {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.nosotros .container .team .card-user:hover .avatar {
+  background-color: #efefef;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.nosotros .container .team .card-user:hover .social {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@media (min-width: 400px) {
+  .nosotros .container .team .card-user {
+    width: 300px;
+  }
+  .nosotros .container .team .card-user .text {
+    padding: 0 0.5rem 1rem;
+    width: 300px;
+  }
+}
+
+@media (min-width: 640px) {
+  .nosotros .container {
+    padding: 2rem;
+  }
 }
 
 .contacto {
@@ -269,6 +520,7 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0;
 }
 
 .restaurantes .navega h2 {
@@ -299,6 +551,9 @@ h1 {
       -ms-flex-align: center;
           align-items: center;
   list-style-type: none;
+  position: relative;
+  width: 100%;
+  max-width: 30rem;
 }
 
 .restaurantes .navega .bb-restaurantes li {
@@ -326,8 +581,8 @@ h1 {
 }
 
 .restaurantes .navega .bb-restaurantes li:hover a {
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   -webkit-transition: -webkit-transform 0.2s ease-out;
   transition: -webkit-transform 0.2s ease-out;
   transition: transform 0.2s ease-out;
@@ -343,8 +598,91 @@ h1 {
   transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 
-.sabores {
-  background: #f59f00;
+@media (min-width: 420px) {
+  .restaurantes .navega {
+    padding: 2rem;
+  }
+}
+
+.sabores .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  overflow: auto;
+  padding: 0;
+  margin: 40px 40px 0 0;
+}
+
+.sabores .container .sabores-images {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  grid-gap: 10px;
+}
+
+.sabores .container .sabores-images img {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 50px black;
+          box-shadow: 0 0 50px black;
+  width: 200px;
+}
+
+@media (min-width: 640px) {
+  .sabores .container .sabores-images {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .sabores .container .sabores-images img {
+    width: 250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sabores .container .sabores-images {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sabores .container .sabores-texto {
+  background: whitesmoke;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #181818;
+  font-family: "Montserrat";
+  padding: 1rem 1rem 3rem;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+}
+
+.sabores .container .sabores-texto h2 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #c59d5f;
+  font-size: 1.8rem;
+}
+
+.sabores .container .sabores-texto p {
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (min-width: 640px) {
+  .sabores .container .sabores-texto {
+    margin: -3rem auto -2rem;
+    width: 80%;
+  }
+  .sabores .container .sabores-texto h2 {
+    font-size: 3rem;
+  }
+  .sabores .container .sabores-texto p {
+    line-height: 1.4;
+  }
 }
 
 .galeria {
@@ -360,7 +698,8 @@ h1 {
 }
 
 .menu .container {
-  padding: 1rem;
+  margin: 40px 0 0 40px;
+  padding: 0;
 }
 
 @media (min-width: 420px) {
@@ -373,7 +712,7 @@ h1 {
   -webkit-box-shadow: 0 0 25px 0 #181818;
           box-shadow: 0 0 25px 0 #181818;
   background: whitesmoke;
-  height: 95%;
+  height: 100%;
   margin: auto;
   display: -ms-grid;
   display: grid;
@@ -442,15 +781,5 @@ h1 {
 
 .facturacion {
   background: #212529;
-}
-
-.container {
-  position: relative;
-  /*background: rgba(203, 203, 203, 0.5);*/
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 40px;
-  padding: 2rem;
-  height: 90%;
 }
 /*# sourceMappingURL=granbarra.css.map */

@@ -251,6 +251,7 @@ h1 {
 .restaurantes {
   background-image: url("https://source.unsplash.com/1600x900/?sailing");
   background-size: cover;
+  background-position: center center;
 }
 
 .restaurantes .navega {

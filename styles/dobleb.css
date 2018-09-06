@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "lemon";
+  src: url("../img/fonts/lemon_milk/LemonMilklight.otf") format("opentype");
+}
+@font-face {
+  font-family: "obcecada";
+  src: url("../img/fonts/obcecada_sans/obcecada-sans-ffp.ttf")
+    format("truetype");
+}
+
 @import url("https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500");
 @import url("animation.css");
@@ -16,7 +26,7 @@
 body {
   min-height: 100vh;
   background-color: #dbdbdb;
-  font-family: "Montserrat", sans-serif;
+  font-family: "lemon", sans-serif;
 }
 
 .main-content {
@@ -45,7 +55,7 @@ body {
   /*padding: 0.5em 0.5em 0.5em 1em;*/
   margin: 0 auto;
   font-size: 3rem;
-  font-family: "Herr Von Muellerhoff", cursive;
+  font-family: "obcecada", Arial, Helvetica, sans-serif;
   color: #c59d5f;
 }
 
@@ -278,7 +288,7 @@ footer {
 
 .historia .heading--title {
   font-size: 6em;
-  font-family: "Herr Von Muellerhoff", cursive;
+  font-family: "obcecada", Arial, Helvetica, sans-serif;
   text-shadow: 1px 1px 3px #000;
 }
 .semblanza {
@@ -309,7 +319,7 @@ footer {
 }
 
 .heading {
-  font-family: "Herr Von Muellerhoff", cursive;
+  font-family: "obcecada", Arial, Helvetica, sans-serif;
   font-size: 6rem;
   font-weight: 500;
   line-height: 1;
@@ -376,7 +386,7 @@ footer {
 .heading--subtitle {
   text-transform: uppercase;
   color: #181818;
-  font-family: "Montserrat", sans-serif;
+  font-family: "obcecada", sans-serif;
   font-weight: 900;
   font-size: 2rem;
   margin-top: -0.8em;
@@ -390,8 +400,10 @@ footer {
   max-width: 960px;
   height: auto;
   align-items: center;
+  position: relative;
 }
 .info--img img {
+  position: relative;
   width: 100%;
   height: auto;
 }
@@ -473,7 +485,7 @@ footer {
 .base h1 {
   text-align: center;
   padding: 2rem;
-  font-family: "Herr Von Muellerhoff", cursive;
+  font-family: "obcecada", Arial, Helvetica, sans-serif;
   font-size: 6rem;
   color: #c59d5f;
   text-shadow: 1px 1px 2px #000;

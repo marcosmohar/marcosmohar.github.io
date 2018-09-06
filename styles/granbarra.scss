@@ -177,9 +177,10 @@ h1 {
   }
 }
 .inicio {
-  background-image: url("../img/granbarra/GRAN-BARRA-26.jpg");
-  background-size: cover;
   background: #181818;
+  background-image: url("/img/granbarra/GRAN-BARRA-26.jpg");
+  background-size: cover;
+
   .container {
     display: grid;
     align-items: center;
@@ -438,11 +439,13 @@ h1 {
         border-radius: 10px;
         box-shadow: 0 0 50px black;
         width: 200px;
+        height: 200px;
       }
       @media (min-width: 640px) {
         grid-template-columns: repeat(2, 1fr);
         img {
           width: 250px;
+          height: 250px;
         }
       }
       @media (min-width: 1200px) {

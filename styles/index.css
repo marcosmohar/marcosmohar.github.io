@@ -18,7 +18,7 @@ body {
 
 body {
   background-color: #f1f1f1;
-  background-image: url("https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=962fdbcc8d5031658056ef47fded4b7b&auto=format&fit=crop&w=1350&q=80");
+  background-image: url("../img/charcoal.jpg");
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -63,6 +63,8 @@ body {
 .subheading {
   text-transform: uppercase;
   font-size: 0.9rem;
+  color: whitesmoke;
+  text-shadow: 2px 2px 5px black;
 }
 @media (min-width: 24rem) {
   .subheading {
@@ -82,107 +84,10 @@ body {
 
 .card-container {
   position: relative;
-  width: 65vmin;
+  width: 90vw;
   height: 80vmin;
+  padding: 0 5vw;
 }
-
-.card {
-  position: absolute;
-  top: 0;
-  left: 0;
+.card-container svg {
   width: 100%;
-  height: 100%;
-  background-color: #fafafa;
-  border-radius: 2px;
-  box-shadow: 2px 2px 5px rgba(17, 17, 17, 0.35);
-  transition: -webkit-transform 0.35s ease-out;
-  transition: transform 0.35s ease-out;
-  transition: transform 0.35s ease-out, -webkit-transform 0.35s ease-out;
-  -webkit-transform: translate(var(--x), var(--y)) scale(0.35)
-    rotate(var(--angle));
-  transform: translate(var(--x), var(--y)) scale(0.35) rotate(var(--angle));
-  will-change: transform;
-}
-.card:hover {
-  -webkit-transform: scale(0.8) rotate(0deg);
-  transform: scale(0.8) rotate(0deg);
-  z-index: 4;
-}
-.card:hover:before {
-  opacity: 1;
-}
-
-.cdmx {
-  -webkit-transform: translate(0, -25%) scale(0.5) rotateZ(5deg);
-  transform: translate(0, -25%) scale(0.5) rotateZ(5deg);
-}
-@media (min-width: 35rem) {
-  .cdmx {
-    -webkit-transform: translate(-10%, -10%) scale(0.35) rotateZ(5deg);
-    transform: translate(-10%, -10%) scale(0.35) rotateZ(5deg);
-    z-index: 1;
-  }
-}
-
-.granbarra {
-  -webkit-transform: translate(-30%, 15%) scale(0.5) rotateZ(-18deg);
-  transform: translate(-30%, 15%) scale(0.5) rotateZ(-18deg);
-}
-@media (min-width: 35rem) {
-  .granbarra {
-    -webkit-transform: translate(-40%, 5%) scale(0.35) rotateZ(-14deg);
-    transform: translate(-40%, 5%) scale(0.35) rotateZ(-14deg);
-    z-index: 0;
-  }
-}
-
-.mty {
-  -webkit-transform: translate(20%, 45%) scale(0.5) rotateZ(15deg);
-  transform: translate(20%, 45%) scale(0.5) rotateZ(15deg);
-}
-@media (min-width: 35rem) {
-  .mty {
-    -webkit-transform: translate(20%, 15%) scale(0.35) rotateZ(0deg);
-    transform: translate(20%, 15%) scale(0.35) rotateZ(0deg);
-    z-index: 2;
-  }
-}
-
-.dobleb {
-  -webkit-transform: translate(-25%, 75%) scale(0.5) rotateZ(-7deg);
-  transform: translate(-25%, 75%) scale(0.5) rotateZ(-7deg);
-}
-@media (min-width: 35rem) {
-  .dobleb {
-    -webkit-transform: translate(45%, 0%) scale(0.35) rotateZ(-7deg);
-    transform: translate(45%, 0%) scale(0.35) rotateZ(-7deg);
-    z-index: 3;
-  }
-}
-
-.card:before {
-  content: "";
-  display: block;
-  width: 90%;
-  height: 80%;
-  margin: 5%;
-  background: var(--image) center center no-repeat;
-  background-size: cover;
-  box-shadow: inset 0 0 5px rgba(34, 34, 34, 0.35);
-  border-radius: 2px;
-  -webkit-filter: sepia(0.2) brightness(0.9) contrast(1.2);
-  filter: sepia(0.2) brightness(0.9) contrast(1.2);
-  transition: opacity 0.35s ease-out;
-  opacity: 0.5;
-  will-change: opacity;
-}
-
-.card:after {
-  display: block;
-  content: var(--caption);
-  font-weight: 500;
-  color: #555;
-  font-size: 3vmin;
-  opacity: 0.75;
-  text-align: center;
 }

@@ -245,9 +245,9 @@ h1 {
 }
 
 .inicio {
-  background-image: url("../img/granbarra/GRAN-BARRA-26.jpg");
-  background-size: cover;
   background: #181818;
+  background-image: url("/img/granbarra/GRAN-BARRA-26.jpg");
+  background-size: cover;
 }
 
 .inicio .container {
@@ -627,6 +627,7 @@ h1 {
   -webkit-box-shadow: 0 0 50px black;
           box-shadow: 0 0 50px black;
   width: 200px;
+  height: 200px;
 }
 
 @media (min-width: 640px) {
@@ -636,6 +637,7 @@ h1 {
   }
   .sabores .container .sabores-images img {
     width: 250px;
+    height: 250px;
   }
 }
 
